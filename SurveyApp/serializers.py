@@ -263,6 +263,8 @@ class ResultCreateSerializer(serializers.ModelSerializer):
         askAnswerListID = getIDList(data['survey'].askList.all().values('id'))
         if len(askAnswerListID) != len(data['resultList']):
             raise serializers.ValidationError({'detail': "Не на все вопросы получены ответы!"})
+        if not data.get('isAnon', False) and not data.get('user', None):
+            raise serializers.ValidationError({'detail': "Вы не выбрали тип ответа на тест, анонимный или нет!"})
         for i, item in enumerate(data['resultList']):
             ask = item['ask']
             answerInput = item.get('answerInput', None)
