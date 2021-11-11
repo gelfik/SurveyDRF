@@ -98,4 +98,4 @@ API BASE URL = `http://127.0.0.1:8000/api`
 * parametr
   * `{"survey": {surveyID}, "isAnon": false, "user": {userID}, "resultList": [{"ask": {askID}, "answerInput": "TextAnswer"}, {"ask": {askID}, "answerList": [{"id": answerListAnswerID}]}, {"ask": {askID}, "answerList": [{"id": answerListAnswerID}, {"id": answerListAnswerID}]}]}`
   * `{"survey": {surveyID}, "isAnon": true, "resultList": [{"ask": {askID}, "answerInput": "TextAnswer"}, {"ask": {askID}, "answerList": [{"id": answerListAnswerID}]}, {"ask": {askID}, "answerList": [{"id": answerListAnswerID}, {"id": answerListAnswerID}]}]}`
-> Что бы пройти анонимно тест, достаточно отправить параметр "isAnon" со значением "true", либо отрпавить параметр "user" с уникальным id пользователя. Число ответов и вопросов в тесте должно совпадать, иначе выйдет уведомление об ошибке.
+> Что бы пройти анонимно тест, достаточно отправить параметр "isAnon" со значением "true"(стоит учесть что результат прохождения опроса будет отображен один раз), либо отрпавить параметр "user" с уникальным id пользователя. Число ответов и вопросов в тесте должно совпадать, иначе выйдет уведомление об ошибке.
